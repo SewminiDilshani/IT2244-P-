@@ -1,0 +1,13 @@
+:: This script displays the current system date and time.
+
+:: Disable command echoing for a cleaner output.
+@echo off  
+
+:: Display the current system date.
+echo Current date: %DATE%  
+
+:: Display the current system time.
+echo Current time: %TIME%  
+
+:: Pause the script to keep the window open until the user presses a key.
+pause  

@@ -1,0 +1,87 @@
+// 1.Creates an empty file named cake.txt
+[sewmini@DELL-LAPTOP ~]$ touch cake.txt
+
+// 2.Opens cake.txt in the vi editor for editing
+[sewmini@DELL-LAPTOP ~]$ vi cake.txt
+
+// 3.Lists all files with a .txt extension in the current directory
+[sewmini@DELL-LAPTOP ~]$ dir *.txt
+cake.txt  p.txt  xyz.txt
+
+x.txt:
+
+// 4.Finds files or directories with "y" in their names
+[sewmini@DELL-LAPTOP ~]$ find *y*
+xyz.txt
+
+// 5.Changes permissions of cake.txt to read-only for all users (owner, group, others)
+[sewmini@DELL-LAPTOP ~]$ chmod 444 cake.txt
+
+// 6.Lists all files in long format, showing file permissions, ownership, size, and modification date
+[sewmini@DELL-LAPTOP ~]$ ls -l
+total 60
+-rw-r--r-- 1 sewmini sewmini  144 Mar 23 18:52 a.tsv
+drwxr-xr-x 3 sewmini sewmini 4096 Mar 22 17:23 abc
+-rw-r--r-- 1 sewmini sewmini  359 Mar 23 15:48 abc.tsv
+-rw-r--r-- 1 sewmini sewmini  431 Mar 23 15:54 awkvars.out
+-r--r--r-- 1 sewmini sewmini   46 Mar 23 21:16 cake.txt
+-r--r--r-- 1 sewmini sewmini   72 Mar 23 20:23 p.txt
+-rw-r--r-- 1 sewmini sewmini  144 Mar 23 20:30 rows_test_2.csv
+-rw-r--r-- 1 sewmini sewmini   61 Mar 22 21:00 test.csv
+-rw-r--r-- 1 sewmini sewmini   60 Mar 23 20:26 test_1.csv
+-rw-r--r-- 1 sewmini sewmini   30 Mar 23 20:28 test_2.csv
+-rw-r--r-- 1 sewmini sewmini   40 Mar 22 21:10 tst_2.csv
+drwxr-xr-x 2 sewmini sewmini 4096 Mar 22 13:06 x
+-rw-r--r-- 1 sewmini sewmini  153 Mar 21 19:26 x.tsv
+drwxr--r-- 2 sewmini sewmini 4096 Mar 22 13:07 x.txt
+-rw-r--r-- 1 sewmini sewmini   39 Mar 22 19:12 xyz.txt
+-rw-r--r-- 1 sewmini sewmini    0 Mar 21 19:05 z.tsv
+
+// 7.Changes permissions of cake.txt to allow read, write, and execute for all users
+[sewmini@DELL-LAPTOP ~]$ chmod 777 cake.txt
+
+// 8.Lists all files again to show the updated permissions
+[sewmini@DELL-LAPTOP ~]$ ls -l
+total 60
+-rw-r--r-- 1 sewmini sewmini  144 Mar 23 18:52 a.tsv
+drwxr-xr-x 3 sewmini sewmini 4096 Mar 22 17:23 abc
+-rw-r--r-- 1 sewmini sewmini  359 Mar 23 15:48 abc.tsv
+-rw-r--r-- 1 sewmini sewmini  431 Mar 23 15:54 awkvars.out
+-rwxrwxrwx 1 sewmini sewmini   46 Mar 23 21:16 cake.txt
+-r--r--r-- 1 sewmini sewmini   72 Mar 23 20:23 p.txt
+-rw-r--r-- 1 sewmini sewmini  144 Mar 23 20:30 rows_test_2.csv
+-rw-r--r-- 1 sewmini sewmini   61 Mar 22 21:00 test.csv
+-rw-r--r-- 1 sewmini sewmini   60 Mar 23 20:26 test_1.csv
+-rw-r--r-- 1 sewmini sewmini   30 Mar 23 20:28 test_2.csv
+-rw-r--r-- 1 sewmini sewmini   40 Mar 22 21:10 tst_2.csv
+drwxr-xr-x 2 sewmini sewmini 4096 Mar 22 13:06 x
+-rw-r--r-- 1 sewmini sewmini  153 Mar 21 19:26 x.tsv
+drwxr--r-- 2 sewmini sewmini 4096 Mar 22 13:07 x.txt
+-rw-r--r-- 1 sewmini sewmini   39 Mar 22 19:12 xyz.txt
+-rw-r--r-- 1 sewmini sewmini    0 Mar 21 19:05 z.tsv
+
+// 9.Changes permissions of cake.txt to: 
+// - Owner: read & execute (5 = r-x)
+// - Group: read-only (4 = r--)
+// - Others: read, write, execute (7 = rwx)
+[sewmini@DELL-LAPTOP ~]$ chmod 547 cake.txt
+
+// .10Lists all files again to show the updated permissions
+[sewmini@DELL-LAPTOP ~]$ ls -l
+total 60
+-rw-r--r-- 1 sewmini sewmini  144 Mar 23 18:52 a.tsv
+drwxr-xr-x 3 sewmini sewmini 4096 Mar 22 17:23 abc
+-rw-r--r-- 1 sewmini sewmini  359 Mar 23 15:48 abc.tsv
+-rw-r--r-- 1 sewmini sewmini  431 Mar 23 15:54 awkvars.out
+-r-xr--rwx 1 sewmini sewmini   46 Mar 23 21:16 cake.txt
+-r--r--r-- 1 sewmini sewmini   72 Mar 23 20:23 p.txt
+-rw-r--r-- 1 sewmini sewmini  144 Mar 23 20:30 rows_test_2.csv
+-rw-r--r-- 1 sewmini sewmini   61 Mar 22 21:00 test.csv
+-rw-r--r-- 1 sewmini sewmini   60 Mar 23 20:26 test_1.csv
+-rw-r--r-- 1 sewmini sewmini   30 Mar 23 20:28 test_2.csv
+-rw-r--r-- 1 sewmini sewmini   40 Mar 22 21:10 tst_2.csv
+drwxr-xr-x 2 sewmini sewmini 4096 Mar 22 13:06 x
+-rw-r--r-- 1 sewmini sewmini  153 Mar 21 19:26 x.tsv
+drwxr--r-- 2 sewmini sewmini 4096 Mar 22 13:07 x.txt
+-rw-r--r-- 1 sewmini sewmini   39 Mar 22 19:12 xyz.txt
+-rw-r--r-- 1 sewmini sewmini    0 Mar 21 19:05 z.tsv

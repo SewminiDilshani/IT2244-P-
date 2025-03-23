@@ -1,0 +1,30 @@
+@echo off
+:: Disables command echoing to make output cleaner
+
+echo Username: %username%
+:: Displays the logged-in user's name
+
+echo Windows version:
+ver
+:: Prints the Windows version
+
+color b
+:: Changes console text color (light aqua on black background)
+
+time
+:: Displays or prompts for the current system time
+
+date
+:: Displays or prompts for the current system date
+
+dir /w
+:: Lists files and directories in wide format (filenames only)
+
+dir /?
+:: Shows help information for the 'dir' command
+
+echo Day: %date%
+:: Displays the current date with a label
+
+pause
+:: Pauses execution and waits for user input before closing

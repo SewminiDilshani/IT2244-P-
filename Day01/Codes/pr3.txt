@@ -1,0 +1,14 @@
+:: This script displays the current logged-in username and Windows version.
+
+:: Disable command echoing for a cleaner output.
+@echo off  
+
+:: Display the current username.
+echo Username: %username%  
+
+:: Display the Windows version.
+echo Windows version:  
+ver  
+
+:: Pause the script to keep the window open until the user presses a key.
+pause  

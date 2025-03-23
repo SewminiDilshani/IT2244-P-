@@ -1,0 +1,45 @@
+::Create the first criteria directory
+mkdir Criteria_01  
+
+::Move into the Criteria_01 directory
+cd Criteria_01  
+
+::Create four standard subdirectories inside Criteria_01
+mkdir Standard_01 
+mkdir Standard_02 
+mkdir Standard_03 
+mkdir Standard_04  
+
+::Move back to the parent directory
+cd ..  
+
+::Create the second criteria directory
+mkdir Criteria_02  
+
+::Move into the Criteria_02 directory
+cd Criteria_02  
+
+::Create three standard subdirectories inside Criteria_02
+mkdir Standard_01 
+mkdir Standard_02 
+mkdir Standard_03  
+
+::Move back to the parent directory
+cd ..  
+
+::Create the third criteria directory
+mkdir Criteria_03  
+
+::Move into the Criteria_03 directory
+cd Criteria_03  
+
+::Create three standard subdirectories inside Criteria_03
+mkdir Standard_01 
+mkdir Standard_02 
+mkdir Standard_03  
+
+::Move back to the parent directory
+cd ..  
+
+::Create the fourth criteria directory (no subdirectories needed)
+mkdir Criteria_04  
