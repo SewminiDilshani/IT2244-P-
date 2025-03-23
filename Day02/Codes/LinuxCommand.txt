@@ -1,0 +1,259 @@
+// 1. Show present working directory
+[sewmini@DELL-LAPTOP ~]$ pwd
+/home/sewmini
+
+// 2. Show logged-in users
+[sewmini@DELL-LAPTOP ~]$ who
+
+// 3. Display help for awk command
+[sewmini@DELL-LAPTOP ~]$ awk
+Usage: awk [POSIX or GNU style options] -f progfile [--] file ...
+Usage: awk [POSIX or GNU style options] [--] 'program' file ...
+POSIX options:          GNU long options: (standard)
+        -f progfile             --file=progfile
+        -F fs                   --field-separator=fs
+        -v var=val              --assign=var=val
+Short options:          GNU long options: (extensions)
+        -b                      --characters-as-bytes
+        -c                      --traditional
+        -C                      --copyright
+        -d[file]                --dump-variables[=file]
+        -D[file]                --debug[=file]
+        -e 'program-text'       --source='program-text'
+        -E file                 --exec=file
+        -g                      --gen-pot
+        -h                      --help
+        -i includefile          --include=includefile
+        -I                      --trace
+        -k                      --csv
+        -l library              --load=library
+        -L[fatal|invalid|no-ext]        --lint[=fatal|invalid|no-ext]
+        -M                      --bignum
+        -N                      --use-lc-numeric
+        -n                      --non-decimal-data
+        -o[file]                --pretty-print[=file]
+        -O                      --optimize
+        -p[file]                --profile[=file]
+        -P                      --posix
+        -r                      --re-interval
+        -s                      --no-optimize
+        -S                      --sandbox
+        -t                      --lint-old
+        -V                      --version
+
+To report bugs, use the `gawkbug' program.
+For full instructions, see the node `Bugs' in `gawk.info'
+which is section `Reporting Problems and Bugs' in the
+printed version.  This same information may be found at
+https://www.gnu.org/software/gawk/manual/html_node/Bugs.html.
+PLEASE do NOT try to report bugs by posting in comp.lang.awk,
+or by using a web forum such as Stack Overflow.
+
+Source code for gawk may be obtained from
+https://ftp.gnu.org/gnu/gawk/gawk-5.3.0.tar.gz
+
+gawk is a pattern scanning and processing language.
+By default it reads standard input and writes standard output.
+
+Examples:
+        awk '{ sum += $1 }; END { print sum }' file
+        awk -F: '{ print $1 }' /etc/passwd
+
+// 4. List files in current directory
+[sewmini@DELL-LAPTOP ~]$ ls
+a.tsv  abc.tsv      p.txt            test.csv    test_2.csv  x      x.txt    z.tsv
+abc    awkvars.out  rows_test_2.csv  test_1.csv  tst_2.csv   x.tsv  xyz.txt
+
+// 5. List files with details, sorted by modification time (oldest first)
+[sewmini@DELL-LAPTOP ~]$ ls -ltr
+total 56
+-rw-r--r-- 1 sewmini sewmini    0 Mar 21 19:05 z.tsv
+-rw-r--r-- 1 sewmini sewmini  153 Mar 21 19:26 x.tsv
+drwxr-xr-x 2 sewmini sewmini 4096 Mar 22 13:06 x
+drwxr--r-- 2 sewmini sewmini 4096 Mar 22 13:07 x.txt
+drwxr-xr-x 3 sewmini sewmini 4096 Mar 22 17:23 abc
+-rw-r--r-- 1 sewmini sewmini   39 Mar 22 19:12 xyz.txt
+-rw-r--r-- 1 sewmini sewmini   61 Mar 22 21:00 test.csv
+-rw-r--r-- 1 sewmini sewmini   40 Mar 22 21:10 tst_2.csv
+-rw-r--r-- 1 sewmini sewmini  359 Mar 23 15:48 abc.tsv
+-rw-r--r-- 1 sewmini sewmini  431 Mar 23 15:54 awkvars.out
+-rw-r--r-- 1 sewmini sewmini  144 Mar 23 18:52 a.tsv
+-r--r--r-- 1 sewmini sewmini   72 Mar 23 20:00 p.txt
+-rw-r--r-- 1 sewmini sewmini   60 Mar 23 20:03 test_1.csv
+-rw-r--r-- 1 sewmini sewmini   30 Mar 23 20:06 test_2.csv
+-rw-r--r-- 1 sewmini sewmini  108 Mar 23 20:12 rows_test_2.csv
+
+// 6. Show all files, including hidden files
+[sewmini@DELL-LAPTOP ~]$ ls -a
+.           .bash_history  .bashrc     a.tsv    awkvars.out      test.csv    tst_2.csv  x.txt
+..          .bash_logout   .x.txt.swp  abc      p.txt            test_1.csv  x          xyz.txt
+.a.tsv.swp  .bash_profile  .z.tsv.swp  abc.tsv  rows_test_2.csv  test_2.csv  x.tsv      z.tsv
+
+// 7. Find all .txt files in the current directory
+[sewmini@DELL-LAPTOP ~]$ find *.txt
+p.txt
+x.txt
+xyz.txt
+
+// 8. Open p.txt using Vim editor
+[sewmini@DELL-LAPTOP ~]$ vi p.txt
+
+// 9. Change permissions of p.txt to 734 (rwx-wxr--)
+[sewmini@DELL-LAPTOP ~]$ chmod 734 p.txt
+
+// 10. List files with details to check permission changes
+[sewmini@DELL-LAPTOP ~]$ ls -ltr
+total 56
+-rw-r--r-- 1 sewmini sewmini    0 Mar 21 19:05 z.tsv
+-rw-r--r-- 1 sewmini sewmini  153 Mar 21 19:26 x.tsv
+drwxr-xr-x 2 sewmini sewmini 4096 Mar 22 13:06 x
+drwxr--r-- 2 sewmini sewmini 4096 Mar 22 13:07 x.txt
+drwxr-xr-x 3 sewmini sewmini 4096 Mar 22 17:23 abc
+-rw-r--r-- 1 sewmini sewmini   39 Mar 22 19:12 xyz.txt
+-rw-r--r-- 1 sewmini sewmini   61 Mar 22 21:00 test.csv
+-rw-r--r-- 1 sewmini sewmini   40 Mar 22 21:10 tst_2.csv
+-rw-r--r-- 1 sewmini sewmini  359 Mar 23 15:48 abc.tsv
+-rw-r--r-- 1 sewmini sewmini  431 Mar 23 15:54 awkvars.out
+-rw-r--r-- 1 sewmini sewmini  144 Mar 23 18:52 a.tsv
+-rw-r--r-- 1 sewmini sewmini   60 Mar 23 20:03 test_1.csv
+-rw-r--r-- 1 sewmini sewmini   30 Mar 23 20:06 test_2.csv
+-rw-r--r-- 1 sewmini sewmini  108 Mar 23 20:12 rows_test_2.csv
+-rwx-wxr-- 1 sewmini sewmini   72 Mar 23 20:23 p.txt
+
+// 11. Change permissions of p.txt to 444 (read-only for all users)
+[sewmini@DELL-LAPTOP ~]$ chmod 444 p.txt
+
+// 12. List files again to verify permission changes
+[sewmini@DELL-LAPTOP ~]$ ls -ltr
+total 56
+-rw-r--r-- 1 sewmini sewmini    0 Mar 21 19:05 z.tsv
+-rw-r--r-- 1 sewmini sewmini  153 Mar 21 19:26 x.tsv
+drwxr-xr-x 2 sewmini sewmini 4096 Mar 22 13:06 x
+drwxr--r-- 2 sewmini sewmini 4096 Mar 22 13:07 x.txt
+drwxr-xr-x 3 sewmini sewmini 4096 Mar 22 17:23 abc
+-rw-r--r-- 1 sewmini sewmini   39 Mar 22 19:12 xyz.txt
+-rw-r--r-- 1 sewmini sewmini   61 Mar 22 21:00 test.csv
+-rw-r--r-- 1 sewmini sewmini   40 Mar 22 21:10 tst_2.csv
+-rw-r--r-- 1 sewmini sewmini  359 Mar 23 15:48 abc.tsv
+-rw-r--r-- 1 sewmini sewmini  431 Mar 23 15:54 awkvars.out
+-rw-r--r-- 1 sewmini sewmini  144 Mar 23 18:52 a.tsv
+-rw-r--r-- 1 sewmini sewmini   60 Mar 23 20:03 test_1.csv
+-rw-r--r-- 1 sewmini sewmini   30 Mar 23 20:06 test_2.csv
+-rw-r--r-- 1 sewmini sewmini  108 Mar 23 20:12 rows_test_2.csv
+-r--r--r-- 1 sewmini sewmini   72 Mar 23 20:23 p.txt
+
+[sewmini@DELL-LAPTOP ~]$ ls
+a.tsv  abc.tsv      p.txt            test.csv    test_2.csv  x      x.txt    z.tsv
+abc    awkvars.out  rows_test_2.csv  test_1.csv  tst_2.csv   x.tsv  xyz.txt
+
+// 13. Count the number of lines in p.txt
+[sewmini@DELL-LAPTOP ~]$ wc -l p.txt
+6 p.txt
+
+// 14. Display contents of p.txt page by page
+[sewmini@DELL-LAPTOP ~]$ more p.txt
+aa 11 45 67
+bb 45 67 88
+cc 34 56 78
+dd 45 78 23
+ee 90 12 34
+ff 67 34 89
+
+// 15. Attempt to use less command (not installed)
+[sewmini@DELL-LAPTOP ~]$ less p.txt
+-bash: less: command not found
+
+// 16. Open test_1.csv using Vim editor
+[sewmini@DELL-LAPTOP ~]$ vi test_1.csv
+
+// 17. Extract 1st and 3rd columns from test_1.csv
+[sewmini@DELL-LAPTOP ~]$ cut -d, -f1,3 test_1.csv
+ab,45
+cd,78
+ef,45
+gh,67
+ij,12
+
+// 18. Extract 1st and 2nd columns from test_1.csv
+[sewmini@DELL-LAPTOP ~]$ cut -d, -f1,2 test_1.csv
+ab,34
+cd,56
+ef,12
+gh,34
+ij,40
+
+// 19. Extract only the 2nd column from test_1.csv
+[sewmini@DELL-LAPTOP ~]$ cut -d, -f2 test_1.csv
+34
+56
+12
+34
+40
+
+// 20. Display the first 2 lines of test_1.csv
+[sewmini@DELL-LAPTOP ~]$ head -2 test_1.csv
+ab,34,45,67
+cd,56,78,90
+
+// 21. Display the last 3 lines of test_1.csv
+[sewmini@DELL-LAPTOP ~]$ tail -3 test_1.csv
+ef,12,45,78
+gh,34,67,89
+ij,40,12,34
+
+// 22. Open test_2.csv using Vim editor
+[sewmini@DELL-LAPTOP ~]$ vi test_2.csv
+
+// 23. Extract 1st and 2nd columns from test_1.csv and save to test_2.csv
+[sewmini@DELL-LAPTOP ~]$ cut -d, -f1,2 test_1.csv > test_2.csv
+
+// 24. List files in the directory
+[sewmini@DELL-LAPTOP ~]$ ls
+a.tsv  abc.tsv      p.txt            test.csv    test_2.csv  x      x.txt    z.tsv
+abc    awkvars.out  rows_test_2.csv  test_1.csv  tst_2.csv   x.tsv  xyz.txt
+
+// 25. Count the number of lines in test_2.csv
+[sewmini@DELL-LAPTOP ~]$ wc -l test_2.csv
+5 test_2.csv
+
+[sewmini@DELL-LAPTOP ~]$ ls
+a.tsv  abc.tsv      p.txt            test.csv    test_2.csv  x      x.txt    z.tsv
+abc    awkvars.out  rows_test_2.csv  test_1.csv  tst_2.csv   x.tsv  xyz.txt
+
+// 26. Append the first 3 lines of test_1.csv to rows_test_2.csv
+[sewmini@DELL-LAPTOP ~]$ head -3 test_1.csv >> rows_test_2.csv
+
+[sewmini@DELL-LAPTOP ~]$ ls
+a.tsv  abc.tsv      p.txt            test.csv    test_2.csv  x      x.txt    z.tsv
+abc    awkvars.out  rows_test_2.csv  test_1.csv  tst_2.csv   x.tsv  xyz.txt
+
+// 27. Display contents of rows_test_2.csv
+[sewmini@DELL-LAPTOP ~]$ more rows_test_2.csv
+ab,34,45,67
+cd,56,78,90
+ef,12,45,78
+ab,34,45,67
+cd,56,78,90
+ef,12,45,78
+ab,34,45,67
+cd,56,78,90
+ef,12,45,78
+ab,34,45,67
+cd,56,78,90
+ef,12,45,78
+
+// 28. Extract the first column from test_1.csv using awk
+[sewmini@DELL-LAPTOP ~]$ awk -F, '{print$1}' test_1.csv
+ab
+cd
+ef
+gh
+ij
+
+// 29. Extract the third column from test_1.csv using awk
+[sewmini@DELL-LAPTOP ~]$ awk -F, '{print$3}' test_1.csv
+45
+78
+45
+67
+12
