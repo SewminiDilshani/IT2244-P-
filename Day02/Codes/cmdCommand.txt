@@ -1,0 +1,14 @@
+//Creates myfile.txt with "Hello, World!" inside
+echo Hello, World! > myfile.txt
+
+// Adds the Read-only attribute to abc.txt
+ATTRIB +R myfile.txt
+
+// Removes the Read-only attribute from abc.txt
+ATTRIB -R myfile.txt
+
+// Adds the Hidden attribute to abc.txt
+ATTRIB +H myfile.txt
+
+// Removes the Hidden attribute to abc.txt
+ATTRIB -H myfile.txt

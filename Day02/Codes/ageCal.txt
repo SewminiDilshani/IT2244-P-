@@ -1,0 +1,25 @@
+:: This script calculates the user's age based on their birth year.
+
+:: Disable command echoing for cleaner output.
+@echo off
+
+:: Display the title message.
+echo Birthday calculator
+
+:: Prompt the user to enter their birth year and store it in 'birth_year'.
+set /p birth_year=Enter your birth year: 
+
+:: Display the current system date.
+echo Current day %date%
+
+:: Extract the current year from the system date.
+set current_year=%date:~10,4%
+
+:: Calculate the user's age by subtracting the birth year from the current year.
+set /a age=%current_year%-%birth_year%
+
+:: Display the calculated age.
+echo You are %age% years old.
+
+:: Pause the script to keep the window open until the user presses a key.
+pause

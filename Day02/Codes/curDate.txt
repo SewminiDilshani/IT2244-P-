@@ -1,0 +1,22 @@
+:: This script extracts and displays the current date, year, month, and day separately.
+
+:: Disable command echoing for cleaner output.
+@echo off  
+
+:: Display the full system date.
+echo Current_day %date%  
+
+:: Extract the current year from the system date.
+:: (Starting at position 10, taking 4 characters)
+echo Current_year=%date:~10,4%  
+
+:: Extract the current month from the system date.
+:: (Starting at position 4, taking 2 characters)
+echo Current_month=%date:~4,2%  
+
+:: Extract the current day from the system date.
+:: (Starting at position 7, taking 2 characters)
+echo Current_date=%date:~7,2%  
+
+:: Pause the script to keep the window open until the user presses a key.
+pause  
