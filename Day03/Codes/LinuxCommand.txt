@@ -1,0 +1,199 @@
+// 1.Creates an empty file named `a.tsv` if it doesn’t already exist.
+[sewmini@DELL-LAPTOP ~]$ touch a.tsv
+
+// 2.Opens `a.tsv` in the `vi` text editor.
+[sewmini@DELL-LAPTOP ~]$ vi a.tsv
+
+// 3.Lists all files, including hidden ones, in the current directory.
+[sewmini@DELL-LAPTOP ~]$ ls -a
+.           .bash_history  .bashrc     a.tsv    awkvars.out  test_1.csv  x      xyz.txt
+..          .bash_logout   .x.txt.swp  abc      p.txt        test_2.csv  x.tsv  z.tsv
+.a.tsv.swp  .bash_profile  .z.tsv.swp  abc.tsv  test.csv     tst_2.csv   x.txt
+
+// 4.Extracts the first field from each line in `a.tsv`, treating tab (`\t`) as the delimiter.
+[sewmini@DELL-LAPTOP ~]$ cut -d$'\t' -f1 a.tsv
+12
+10
+09
+46
+54
+80
+67
+34
+45
+23
+23
+43
+
+// 5.Extracts the 3rd field from each line in `a.tsv`, using space as the delimiter.
+[sewmini@DELL-LAPTOP ~]$ cut -d " " -f3 a.tsv
+12      67      90      23
+10      34      87      32
+09      74      24      90
+46      45      22      67
+54      27      87      34
+80      50      45      21
+67      89      23      90
+34      66      78      07
+45      23      67      43
+23      56      78      99
+23      45      56      12
+43      55      89      08
+
+// 6.Displays the first 2 lines of `a.tsv`.
+[sewmini@DELL-LAPTOP ~]$ head -n2 a.tsv
+12      67      90      23
+10      34      87      32
+
+// 7.Displays the last 2 lines of `a.tsv`.
+[sewmini@DELL-LAPTOP ~]$ tail -n2 a.tsv
+23      45      56      12
+43      55      89      08
+
+// 8.Opens `a.tsv` in the `vi` text editor, remove tabs and add spaces between values.
+[sewmini@DELL-LAPTOP ~]$ vi a.tsv
+
+// 9.Extracts the 1st field from each line in `a.tsv`, using space as the delimiter.
+[sewmini@DELL-LAPTOP ~]$ cut -d ' ' -f1 a.tsv
+12
+10
+09
+46
+54
+80
+67
+34
+45
+23
+23
+43
+
+// 10.Again Extracts the tab seperated first column
+[sewmini@DELL-LAPTOP ~]$ cut -d\t -f1 a.tsv
+12 67 90 23
+10 34 87 32
+09 74 24 90
+46 45 22 67
+54 27 87 34
+80 50 45 21
+67 89 23 90
+34 66 78 07
+45 23 67 43
+23 56 78 99
+23 45 56 12
+43 55 89 08
+
+// 11.Extracts the 2nd field from each line in `a.tsv`, using space as the delimiter.
+[sewmini@DELL-LAPTOP ~]$ cut -d ' ' -f2 a.tsv
+67
+34
+74
+45
+27
+50
+89
+66
+23
+56
+45
+55
+
+// 12.Displays the first 10 lines of `a.tsv` (default behavior of `head`).
+[sewmini@DELL-LAPTOP ~]$ head a.tsv
+12 67 90 23
+10 34 87 32
+09 74 24 90
+46 45 22 67
+54 27 87 34
+80 50 45 21
+67 89 23 90
+34 66 78 07
+45 23 67 43
+23 56 78 99
+
+// 13.Displays the first 8 lines of `a.tsv`.
+[sewmini@DELL-LAPTOP ~]$ head -8 a.tsv
+12 67 90 23
+10 34 87 32
+09 74 24 90
+46 45 22 67
+54 27 87 34
+80 50 45 21
+67 89 23 90
+34 66 78 07
+
+// 14.Displays the last 8 lines of `a.tsv`.
+[sewmini@DELL-LAPTOP ~]$ tail -8 a.tsv
+54 27 87 34
+80 50 45 21
+67 89 23 90
+34 66 78 07
+45 23 67 43
+23 56 78 99
+23 45 56 12
+43 55 89 08
+
+// 15.Displays the first line of `a.tsv`.
+[sewmini@DELL-LAPTOP ~]$ head -1 a.tsv
+12 67 90 23
+
+// 16.Displays the last line of `a.tsv`.
+[sewmini@DELL-LAPTOP ~]$ tail -1 a.tsv
+43 55 89 08
+
+// 17.Displays the first 100 lines of `a.tsv`.
+[sewmini@DELL-LAPTOP ~]$ head -100 a.tsv
+12 67 90 23
+10 34 87 32
+09 74 24 90
+46 45 22 67
+54 27 87 34
+80 50 45 21
+67 89 23 90
+34 66 78 07
+45 23 67 43
+23 56 78 99
+23 45 56 12
+43 55 89 08
+
+// 18.Extracts the 8th line of `a.tsv` by first displaying the top 8 lines, then filtering the last one.
+[sewmini@DELL-LAPTOP ~]$ head -n8 a.tsv | tail -n1
+34 66 78 07
+
+// 19.Prints the number of fields in the first line of `a.tsv` (default field separator is space).
+[sewmini@DELL-LAPTOP ~]$ awk '{print NF; exit}' a.tsv
+4
+
+// 20.Prints the number of fields in the first line of `a.tsv`, treating tab (`\t`) as the delimiter.
+[sewmini@DELL-LAPTOP ~]$ awk -F'\t' '{print NF; exit}' a.tsv
+1
+
+// 21.Extracts and prints the 3rd field from each line of `a.tsv` (space-separated).
+[sewmini@DELL-LAPTOP ~]$ awk '{print $3}' a.tsv
+90
+87
+24
+22
+87
+45
+23
+78
+67
+78
+56
+89
+
+// 22.Counts and prints the number of lines in `a.tsv`.
+[sewmini@DELL-LAPTOP ~]$ wc -l a.tsv
+12 a.tsv
+
+// 23.Displays the first 10 lines of `a.tsv` and filters only those containing "67".
+[sewmini@DELL-LAPTOP ~]$ head -n10 a.tsv | grep '67'
+12 67 90 23
+46 45 22 67
+67 89 23 90
+45 23 67 43
+
+// 24.Displays the first 7 lines of `a.tsv` and filters only those containing "12".
+[sewmini@DELL-LAPTOP ~]$ head -n7 a.tsv | grep '12'
+12 67 90 23
