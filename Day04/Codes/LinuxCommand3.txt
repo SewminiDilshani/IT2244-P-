@@ -1,0 +1,29 @@
+// 1. Opens the file "prgrm2.sh" in the vi editor to create or edit a shell script.
+[sewmini@DELL-LAPTOP ~]$ vi prgrm2.sh
+
+// 2. Lists all files in the current directory to check if "prgrm2.sh" is created.  
+[sewmini@DELL-LAPTOP ~]$ ls
+a.tsv  abc.tsv      cake.txt  prgrm2.sh        test.csv    test_2.csv  x      x.txt    z.tsv
+abc    awkvars.out  p.txt     rows_test_2.csv  test_1.csv  tst_2.csv   x.tsv  xyz.txt
+
+// 3. Changes file permissions of "prgrm2.sh" to 777 (read, write, and execute for all users). 
+[sewmini@DELL-LAPTOP ~]$ chmod 777 prgrm2.sh
+
+// 4. Executes the shell script "prgrm2.sh". 
+// 5. The script prompts the user with "Who are you?" and waits for input. 
+// 6. The script prompts the user to enter three numbers.  
+// 7. The script greets the user with their name. 
+// 8. The script calculates the sum of the three numbers (10 + 12 + 20 = 42) and displays it. 
+// 9. The script calculates the average of the three numbers (42 / 3 = 14) and displays it.  
+[sewmini@DELL-LAPTOP ~]$ ./prgrm2.sh
+Who are you?
+Sewmini
+Enter Number 1
+10
+Enter Number 2
+12
+Enter Number 3
+20
+Hi Sewmini
+Summation  42
+Average  14

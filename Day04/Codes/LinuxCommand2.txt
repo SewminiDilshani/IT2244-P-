@@ -1,0 +1,25 @@
+// 1. Logging into the system with the user "2021ict114" and accessing the remote machine.
+login as: 2021ict114
+2021ict114@172.16.140.150's password:
+
+// 2. Displays the last login details.
+Last login: Mon Mar 24 12:17:46 2025 from 172.16.140.45
+
+// 3. Opens the file "prgrm1.sh" in the vi editor to create or modify a shell script.
+[2021ict114@fedora ~]$ vi prgrm1.sh
+
+// 4. Lists files in the current directory to check if "prgrm1.sh" is created.
+[2021ict114@fedora ~]$ ls
+abc.tsv  abc.txt  a.txt  file  prgrm1.sh  xyz.txt
+
+// 5. Changes file permissions of "prgrm1.sh" to 777 (read, write, and execute for all users).
+[2021ict114@fedora ~]$ chmod 777 prgrm1.sh
+
+// 6. Executes the shell script "prgrm1.sh"
+// 7. The script outputs "Name" as a prompt and then takes input (e.g., "Sewmini").
+// 8. It then prints "Hi Sewmini" as a response.
+[2021ict114@fedora ~]$ ./prgrm1.sh
+Name
+Sewmini
+Hi Sewmini
+

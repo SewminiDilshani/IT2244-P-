@@ -1,0 +1,28 @@
+// 1. Opens the file "prgrm3.sh" in the vi editor to create or edit a shell script.  
+[sewmini@DELL-LAPTOP ~]$ vi prgrm3.sh
+
+// 2. Lists all files in the current directory to check if "prgrm3.sh" is created.
+[sewmini@DELL-LAPTOP ~]$ ls
+a.tsv  abc.tsv      cake.txt  prgrm2.sh  rows_test_2.csv  test_1.csv  tst_2.csv  x.tsv  xyz.txt
+abc    awkvars.out  p.txt     prgrm3.sh  test.csv         test_2.csv  x          x.txt  z.tsv
+
+// 3. Changes file permissions of "prgrm3.sh" to 777 (read, write, and execute for all users).  
+[sewmini@DELL-LAPTOP ~]$ chmod 777 prgrm3.sh
+
+// 4. Executes the shell script "prgrm3.sh". 
+// 5. The script prompts the user to enter the first number (e.g., 40). 
+// 6. The script prompts the user to enter the second number (e.g., 10). 
+// 7. The script performs arithmetic operations on the two numbers:  
+//    - Adds them and prints the result (40 + 10 = 50). 
+//    - Subtracts the second number from the first (40 - 10 = 30). 
+//    - Multiplies the two numbers (40 * 10 = 400).  
+//    - Divides the first number by the second (40 / 10 = 4).
+[sewmini@DELL-LAPTOP ~]$ ./prgrm3.sh  
+Enter Number 1
+40
+Enter Number 2
+10
+Addition:  50
+Subtraction:  30
+Multiplication:  400
+Division:  4
