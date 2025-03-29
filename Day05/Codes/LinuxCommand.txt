@@ -1,0 +1,322 @@
+//1. Open the data file using vi (manual step).
+[sewmini@DELL-LAPTOP ~]$ vi data_file.csv
+
+//2. List all files in the current directory
+[sewmini@DELL-LAPTOP ~]$ ls
+a.tsv    awkvars.out    head_file.csv  prgrm3.sh        test_1.csv  x      xyz.txt
+abc      cake.txt       p.txt          rows_test_2.csv  test_2.csv  x.tsv  z.tsv
+abc.tsv  data_file.csv  prgrm2.sh      test.csv         tst_2.csv   x.txt
+
+//3. Display the contents of data_file.csv
+[sewmini@DELL-LAPTOP ~]$ more data_file.csv
+ID,Name,Age,Salary,Department
+101,Alice,30,70000,Data Science
+102,Bob,25,50000,Engineering
+103,Charlie,5,80000,Data Science
+104,David,40,90000,HR
+105,Eve,28,60000,Engineering
+106,Frank,38,75000,HR
+107,Grace,27,72000,Data Science
+108,Hank,32,68000,Engineering
+109,Ivy,29,62000,Data Science
+110,Jack,31,71000,HR
+
+//4. Display the first 10 lines of data_file.csv
+[sewmini@DELL-LAPTOP ~]$ head data_file.csv
+ID,Name,Age,Salary,Department
+101,Alice,30,70000,Data Science
+102,Bob,25,50000,Engineering
+103,Charlie,5,80000,Data Science
+104,David,40,90000,HR
+105,Eve,28,60000,Engineering
+106,Frank,38,75000,HR
+107,Grace,27,72000,Data Science
+108,Hank,32,68000,Engineering
+109,Ivy,29,62000,Data Science
+
+//5. Display the first 5 lines of data_file.csv
+[sewmini@DELL-LAPTOP ~]$ head -5 data_file.csv
+ID,Name,Age,Salary,Department
+101,Alice,30,70000,Data Science
+102,Bob,25,50000,Engineering
+103,Charlie,5,80000,Data Science
+104,David,40,90000,HR
+
+//6. Display the last 5 lines of data_file.csv
+[sewmini@DELL-LAPTOP ~]$ tail -5 data_file.csv
+106,Frank,38,75000,HR
+107,Grace,27,72000,Data Science
+108,Hank,32,68000,Engineering
+109,Ivy,29,62000,Data Science
+110,Jack,31,71000,HR
+
+//7. Count the number of lines in data_file.csv
+[sewmini@DELL-LAPTOP ~]$ wc -l data_file.csv
+11 data_file.csv
+
+//8. Print the number of fields in the first row
+[sewmini@DELL-LAPTOP ~]$ awk -F, '{print NF;exit}' data_file.csv
+5
+
+//9. Print the third column (Age)
+[sewmini@DELL-LAPTOP ~]$ awk -F, '{print $3}' data_file.csv
+Age
+30
+25
+5
+40
+28
+38
+27
+32
+29
+31
+
+//10. Extract the third column using cut
+[sewmini@DELL-LAPTOP ~]$ cut -d, -f3 data_file.csv
+Age
+30
+25
+5
+40
+28
+38
+27
+32
+29
+31
+
+//11. Extract the 7th row
+[sewmini@DELL-LAPTOP ~]$ head -n7 data_file.csv | tail -n1
+106,Frank,38,75000,HR
+
+//12. Copy Name and Age columns to data_file_copy.csv
+[sewmini@DELL-LAPTOP ~]$ cut -d, -f2,3 data_file.csv >> data_file_copy.csv
+
+//13. List all files in the directory
+[sewmini@DELL-LAPTOP ~]$ ls
+a.tsv    awkvars.out    data_file_copy.csv  prgrm2.sh        test.csv    tst_2.csv  x.txt
+abc      cake.txt       head_file.csv       prgrm3.sh        test_1.csv  x          xyz.txt
+abc.tsv  data_file.csv  p.txt               rows_test_2.csv  test_2.csv  x.tsv      z.tsv
+
+//14. Check if data_file_copy.csv exists
+[sewmini@DELL-LAPTOP ~]$ ls -a data_file_copy.csv
+data_file_copy.csv
+
+//15. Display contents of data_file_copy.csv
+[sewmini@DELL-LAPTOP ~]$ more data_file_copy.csv
+Name,Age
+Alice,30
+Bob,25
+Charlie,5
+David,40
+Eve,28
+Frank,38
+Grace,27
+Hank,32
+Ivy,29
+Jack,31
+
+//16. Print Name and Age columns using awk
+[sewmini@DELL-LAPTOP ~]$ awk -F, '{print $2,$3}' data_file.csv
+Name Age
+Alice 30
+Bob 25
+Charlie 5
+David 40
+Eve 28
+Frank 38
+Grace 27
+Hank 32
+Ivy 29
+Jack 31
+
+//17. Save Name and Age columns to xyz.csv
+[sewmini@DELL-LAPTOP ~]$ awk -F, '{print $2,$3}' data_file.csv >> xyz.csv
+
+//18. List all files in the directory
+[sewmini@DELL-LAPTOP ~]$ ls
+a.tsv    awkvars.out    data_file_copy.csv  prgrm2.sh        test.csv    tst_2.csv  x.txt    z.tsv
+abc      cake.txt       head_file.csv       prgrm3.sh        test_1.csv  x          xyz.csv
+abc.tsv  data_file.csv  p.txt               rows_test_2.csv  test_2.csv  x.tsv      xyz.txt
+
+//19. Display contents of xyz.csv
+[sewmini@DELL-LAPTOP ~]$ more xyz.csv
+Name Age
+Alice 30
+Bob 25
+Charlie 5
+David 40
+Eve 28
+Frank 38
+Grace 27
+Hank 32
+Ivy 29
+Jack 31
+
+//20. Print the Salary column
+[sewmini@DELL-LAPTOP ~]$ awk -F, '{print $4}' data_file.csv
+Salary
+70000
+50000
+80000
+90000
+60000
+75000
+72000
+68000
+62000
+71000
+
+//21. Sort Salary column in ascending order
+[sewmini@DELL-LAPTOP ~]$ awk -F, '{print $4}' data_file.csv | sort
+50000
+60000
+62000
+68000
+70000
+71000
+72000
+75000
+80000
+90000
+Salary
+
+//22. Sort Salary column in descending order
+[sewmini@DELL-LAPTOP ~]$ awk -F, '{print $4}' data_file.csv | sort -r
+Salary
+90000
+80000
+75000
+72000
+71000
+70000
+68000
+62000
+60000
+50000
+
+//23. Sort the file based on Salary (numeric ascending)
+[sewmini@DELL-LAPTOP ~]$ sort -t',' -k4,4n data_file.csv
+ID,Name,Age,Salary,Department
+102,Bob,25,50000,Engineering
+105,Eve,28,60000,Engineering
+109,Ivy,29,62000,Data Science
+108,Hank,32,68000,Engineering
+101,Alice,30,70000,Data Science
+110,Jack,31,71000,HR
+107,Grace,27,72000,Data Science
+106,Frank,38,75000,HR
+103,Charlie,5,80000,Data Science
+104,David,40,90000,HR
+
+//24. Sort the file based on Salary (numeric descending)
+[sewmini@DELL-LAPTOP ~]$ sort -t',' -k4,4nr data_file.csv
+104,David,40,90000,HR
+103,Charlie,5,80000,Data Science
+106,Frank,38,75000,HR
+107,Grace,27,72000,Data Science
+110,Jack,31,71000,HR
+101,Alice,30,70000,Data Science
+108,Hank,32,68000,Engineering
+109,Ivy,29,62000,Data Science
+105,Eve,28,60000,Engineering
+102,Bob,25,50000,Engineering
+ID,Name,Age,Salary,Department
+
+//25. Sort the file by Name (ascending)
+[sewmini@DELL-LAPTOP ~]$ sort -t',' -k2,2 data_file.csv
+101,Alice,30,70000,Data Science
+102,Bob,25,50000,Engineering
+103,Charlie,5,80000,Data Science
+104,David,40,90000,HR
+105,Eve,28,60000,Engineering
+106,Frank,38,75000,HR
+107,Grace,27,72000,Data Science
+108,Hank,32,68000,Engineering
+109,Ivy,29,62000,Data Science
+110,Jack,31,71000,HR
+ID,Name,Age,Salary,Department
+
+//26. Sort the file by Name (descending)
+[sewmini@DELL-LAPTOP ~]$ sort -t',' -k2,2r data_file.csv
+ID,Name,Age,Salary,Department
+110,Jack,31,71000,HR
+109,Ivy,29,62000,Data Science
+108,Hank,32,68000,Engineering
+107,Grace,27,72000,Data Science
+106,Frank,38,75000,HR
+105,Eve,28,60000,Engineering
+104,David,40,90000,HR
+103,Charlie,5,80000,Data Science
+102,Bob,25,50000,Engineering
+101,Alice,30,70000,Data Science
+
+//27. Sort the file by Salary (descending)
+[sewmini@DELL-LAPTOP ~]$ sort -t',' -k4,4 -r data_file.csv
+ID,Name,Age,Salary,Department
+104,David,40,90000,HR
+103,Charlie,5,80000,Data Science
+106,Frank,38,75000,HR
+107,Grace,27,72000,Data Science
+110,Jack,31,71000,HR
+101,Alice,30,70000,Data Science
+108,Hank,32,68000,Engineering
+109,Ivy,29,62000,Data Science
+105,Eve,28,60000,Engineering
+102,Bob,25,50000,Engineering
+
+//28. Sort the file by Name, then by Salary (ascending)
+[sewmini@DELL-LAPTOP ~]$ sort -t',' -k2,2 -k4,4 data_file.csv
+101,Alice,30,70000,Data Science
+102,Bob,25,50000,Engineering
+103,Charlie,5,80000,Data Science
+104,David,40,90000,HR
+105,Eve,28,60000,Engineering
+106,Frank,38,75000,HR
+107,Grace,27,72000,Data Science
+108,Hank,32,68000,Engineering
+109,Ivy,29,62000,Data Science
+110,Jack,31,71000,HR
+ID,Name,Age,Salary,Department
+
+//29. Sort the file by Name, then by Salary (descending)
+[sewmini@DELL-LAPTOP ~]$ sort -t',' -k2,2 -k4,4 -r data_file.csv
+ID,Name,Age,Salary,Department
+110,Jack,31,71000,HR
+109,Ivy,29,62000,Data Science
+108,Hank,32,68000,Engineering
+107,Grace,27,72000,Data Science
+106,Frank,38,75000,HR
+105,Eve,28,60000,Engineering
+104,David,40,90000,HR
+103,Charlie,5,80000,Data Science
+102,Bob,25,50000,Engineering
+101,Alice,30,70000,Data Science
+
+//30. Sort the file by Salary, then by Name (descending)
+[sewmini@DELL-LAPTOP ~]$ sort -t',' -k4,4 -k2,2 -r data_file.csv
+ID,Name,Age,Salary,Department
+104,David,40,90000,HR
+103,Charlie,5,80000,Data Science
+106,Frank,38,75000,HR
+107,Grace,27,72000,Data Science
+110,Jack,31,71000,HR
+101,Alice,30,70000,Data Science
+108,Hank,32,68000,Engineering
+109,Ivy,29,62000,Data Science
+105,Eve,28,60000,Engineering
+102,Bob,25,50000,Engineering
+
+//31. Sort the file by Department, then by Salary (descending)
+[sewmini@DELL-LAPTOP ~]$ sort -t',' -k5,5 -k4,4 -r data_file.csv
+104,David,40,90000,HR
+106,Frank,38,75000,HR
+110,Jack,31,71000,HR
+108,Hank,32,68000,Engineering
+105,Eve,28,60000,Engineering
+102,Bob,25,50000,Engineering
+ID,Name,Age,Salary,Department
+107,Grace,27,72000,Data Science
+101,Alice,30,70000,Data Science
+109,Ivy,29,62000,Data Science
