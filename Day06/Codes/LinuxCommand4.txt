@@ -1,0 +1,25 @@
+// Prompt the user to enter a username.
+echo "Enter user name: "
+// Read and store the entered username in the variable 'uname'.
+read uname
+// Check if the entered username matches "Mino". If true, execute the next command.
+if [ "$uname" == "Mino" ];then
+// Display "User name is correct" if the condition is met.
+echo "User name is correct"
+// If the username is not "Mino", execute the next command.
+else
+// Display "User name is incorrect" if the username does not match "Mino".
+echo "User name is incorrect"
+// End of the if-else conditional statement.
+fi
+
+
+
+
+Linux Commands-:
+// Open the file pr4.sh using the Vi editor to create or edit the script.
+[sewmini@DELL-LAPTOP ~]$ vi pr4.sh
+// Grant full permissions (read, write, execute) to pr4.sh for all users.
+[sewmini@DELL-LAPTOP ~]$ chmod 777 pr4.sh
+// Execute the script pr4.sh in the terminal.
+[sewmini@DELL-LAPTOP ~]$ ./pr4.sh

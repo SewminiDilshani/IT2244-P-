@@ -1,0 +1,44 @@
+// Prompt the user to enter the first number.
+echo "Enter the number 1:"
+// Read and store the first number in the variable 'num1'.
+read num1
+// Prompt the user to enter the second number.
+echo "Enter the number 2:"
+// Read and store the second number in the variable 'num2'.
+read num2
+// Calculate the sum of num1 and num2 using the 'expr' command and store it in 'sum'.
+sum=$(expr $num1 + $num2)
+// Print the sum of the two numbers.
+echo "Summation: $sum"
+// Calculate the subtraction of num1 and num2 using 'expr' and store it in 'sub'.
+sub=$(expr $num1 - $num2)
+// Print the subtraction result.
+echo "Subtraction: $sub"
+// Calculate the multiplication of num1 and num2 using 'expr' (Note: '*' must be escaped with '\').
+mul=$(expr $num1 \* $num2)
+// Print the multiplication result.
+echo "Multiplication: $mul"
+// Check if num2 is not equal to zero before performing division.
+if [ $num2 -ne 0 ]; then
+// Calculate the division of num1 by num2 using 'expr' and store it in 'div'.
+    div=$(expr $num1 / $num2)
+// Print the division result.
+    echo "Division: $div"
+// If num2 is zero, execute the next command.
+else
+// Print an error message to indicate that division by zero is not allowed.
+    echo "Division: Error! Cannot divide by zero."
+// End of the if-else conditional statement.
+fi
+
+
+
+
+
+Linux Commands-:
+// Open the file pr6.sh using the Vi editor.
+[sewmini@DELL-LAPTOP ~]$ vi pr6.sh
+// Grant full permissions (read, write, execute) to pr6.sh for all users.
+[sewmini@DELL-LAPTOP ~]$ chmod 777 pr6.sh
+// Execute the script pr6.sh in the terminal.
+[sewmini@DELL-LAPTOP ~]$ ./pr6.sh

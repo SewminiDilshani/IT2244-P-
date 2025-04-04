@@ -1,0 +1,31 @@
+// Prompt the user to enter two numbers.
+echo "Enter two numbers: "
+// Read and store the first number in the variable 'num1'.
+read num1
+// Read and store the second number in the variable 'num2'.
+read num2
+// Check if 'num1' is greater than 'num2'. If true, execute the next command.
+if (( num1 > num2 )); then
+// Print that 'num1' is greater than 'num2'.
+    echo "$num1 is greater than $num2"
+// Check if 'num1' is less than 'num2'. If true, execute the next command.
+elif (( num1 < num2 )); then
+// Print that 'num1' is less than 'num2'.
+    echo "$num1 is less than $num2"
+// If neither condition is met, execute the next command (numbers must be equal).
+else
+// Print that both numbers are equal.
+    echo "$num1 is equal to $num2"
+// End of the if-elif-else conditional statement.
+fi
+
+
+
+
+Linux Commands-:
+// Open the file pr5.sh using the Vi editor.
+[sewmini@DELL-LAPTOP ~]$ vi pr5.sh
+// Give full permissions (read, write, execute) to pr5.sh for all users.
+[sewmini@DELL-LAPTOP ~]$ chmod 777 pr5.sh
+// Execute the script pr5.sh in the terminal.
+[sewmini@DELL-LAPTOP ~]$ ./pr5.sh

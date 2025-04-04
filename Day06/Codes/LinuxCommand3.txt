@@ -1,0 +1,48 @@
+// Prompt the user to enter a number between 1 and 7.
+echo "Enter a number (1-7): "
+// Read and store the user's input in the variable 'n'.
+read n
+// Check if the entered number is 1. If true, execute the next command.
+if [ "$n" -eq 1 ]; then
+// Print "Monday" if the condition is met.
+   echo "Monday" ;
+// Check if the entered number is 2. If true, execute the next command.
+elif [ "$n" -eq 2 ]; then
+// Print "Tuesday" if the condition is met.
+   echo "Tuesday" ;
+// Check if the entered number is 3. If true, execute the next command.
+elif [ "$n" -eq 3 ]; then
+// Print "Wednesday" if the condition is met.
+   echo "Wednesday" ;
+// Check if the entered number is 4. If true, execute the next command.
+elif [ "$n" -eq 4 ]; then
+// Print "Thursday" if the condition is met.
+   echo "Thursday" ;
+// Check if the entered number is 5. If true, execute the next command.
+elif [ "$n" -eq 5 ]; then
+// Print "Friday" if the condition is met.
+   echo "Friday" ;
+// Check if the entered number is 6. If true, execute the next command.
+elif [ "$n" -eq 6 ]; then
+// Print "Saturday" if the condition is met.
+   echo "Saturday" ;
+// Check if the entered number is 7. If true, execute the next command.
+elif [ "$n" -eq 7 ]; then
+// Print "Sunday" if the condition is met.
+   echo "Sunday" ;
+// If the entered number is not between 1 and 7, execute the next command.
+else
+// Print "Invalid input" if the number is out of range.
+   echo "Invalid input"
+// End of the if-elif-else conditional statement.
+fi
+
+
+
+Linux Commands-:
+// Open the file pr3.sh using the Vi editor to create or edit the script.
+[sewmini@DELL-LAPTOP ~]$ vi pr3.sh
+// Change the permissions of pr3.sh to allow read, write, and execute for all users.
+[sewmini@DELL-LAPTOP ~]$ chmod 777 pr3.sh
+// Execute the script pr3.sh in the terminal.
+[sewmini@DELL-LAPTOP ~]$ ./pr3.sh

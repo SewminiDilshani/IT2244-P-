@@ -1,0 +1,35 @@
+// Prompt the user to enter the first number.
+echo "Enter the number 1:"
+// Read and store the first number input by the user in the variable num1.
+read num1
+// Prompt the user to enter the second number.
+echo "Enter the number 2:"
+// Read and store the second number input by the user in the variable num2.
+read num2
+// Perform addition of num1 and num2, then store the result in the variable sum. 
+sum=$((num1+num2))
+// Display the result of the addition (summation).
+echo "Summation: "$sum
+// Perform subtraction (num1 - num2), and store the result in sub.
+sub=$((num1-num2))
+// Display the result of the subtraction.
+echo "Subtraction: "$sub
+// Perform division (num1 / num2), and store the result in div. This assumes num2 is not zero.
+div=$((num1/num2))
+// Display the result of the division.
+echo "Division: "$div
+// Perform multiplication (num1 * num2), and store the result in mul.
+mul=$((num1*num2))
+// Display the result of the multiplication.
+echo "Multiplication: "$mul
+
+
+
+
+Linux Commands-:
+// Open the file pr2.sh using the Vi editor to create or edit the script.
+[sewmini@DELL-LAPTOP ~]$ vi pr2.sh
+// Grant full permissions (read, write, execute) to pr2.sh for everyone.
+[sewmini@DELL-LAPTOP ~]$ chmod 777 pr2.sh
+// Execute the script pr2.sh in the terminal.
+[sewmini@DELL-LAPTOP ~]$ ./pr2.sh
