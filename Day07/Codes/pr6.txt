@@ -1,0 +1,23 @@
+Q6]
+Print pattern.
+
+1 
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+1 2 3 4 5 6
+----------------------------------------------------------------------------------------------------------------
+
+Answer-:
+
+// Outer loop: controls the number of rows (1 to 6)
+for ((i=1; i<=6; i++))
+do
+  // Inner loop: prints numbers from 1 to i
+  for ((j=1; j<=i; j++))
+  do
+    echo -n "$j "  // Print current value of j followed by a space
+  done
+  echo             // Move to next line after each row
+done

@@ -1,0 +1,51 @@
+Q4]
+Print below pattern using nested loop.
+columns=7 , rows=7
+*
+**
+***
+****
+*****
+******
+*******
+       
+*******
+******
+*****
+****
+***
+**
+*
+----------------------------------------------------------------------------------------------------------------
+
+Answer-:
+
+// First Triangle: Increasing pattern of stars
+
+// Outer loop from 1 to 7 for rows
+for((i=1; i<=7; i++))
+do
+  // Inner loop to print '*' i times
+  for((j=0; j<i; j++))
+  do
+    echo -n "*"  // Print star without newline
+  done
+  echo ""        // Print newline after each row
+done
+
+// Print an empty line to separate patterns
+echo ""
+
+// Second Triangle: Decreasing pattern of stars
+
+// Outer loop from 0 to 7 for rows
+for((i=0; i<=7; i++))
+do
+  // Inner loop to print '*' (7 - i) times
+  for((j=7; j>i; j--))
+  do
+    echo -n "*"  // Print star without newline
+  done
+  echo ""        // Print newline after each row
+done
+

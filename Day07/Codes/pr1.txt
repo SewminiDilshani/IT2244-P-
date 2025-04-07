@@ -1,0 +1,79 @@
+Q1]
+Write a code for small astrology based on your life path number for that get date of birth fro user 
+then calculate life path number.(use switch case)
+Ex:
+Date: 23
+Calculation for life path number:
+                  a=date%10
+				  b=date/10
+				  c=a+b
+If life path number:
+                  1:Lucky
+				  2:Carefuly do your work
+				  3:Storger
+				  4:Happy
+				  5:Can get help
+				  6:Doubt
+				  7:Sad
+				  8:Like
+				  9:Courage
+----------------------------------------------------------------------------------------------------------------
+
+Answer-:
+
+// Print prompt to enter date
+echo "Date: "
+
+// Read user input and store in variable 'date'
+read date
+
+// Inform about calculation start
+echo "Calculation for life path number: "
+
+// Get last digit of the date
+a=$(($date % 10))
+
+// Get all digits except last
+b=$(($date / 10))
+
+// Add the digits together
+c=$(($a + $b))
+
+// Again, get last digit of the result
+d=$(($c % 10))
+
+// Get all digits except last
+e=$(($c / 10))
+
+// Add the digits again to reduce to single digit
+f=$(($d + $e))
+
+// Choose output based on final single digit (life path number)
+case $f in
+1) echo "Lucky" ;;                     // Life path 1
+2) echo "Carefuly do your work" ;;     // Life path 2
+3) echo "Storger" ;;                   // Life path 3 
+4) echo "Happy" ;;                     // Life path 4
+5) echo "Can get help" ;;              // Life path 5
+6) echo "Doubt" ;;                     // Life path 6
+7) echo "Sad" ;;                       // Life path 7
+8) echo "Like" ;;                      // Life path 8
+9) echo "Courage" ;;                   // Life path 9
+esac
+
+
+
+Linux Commands-:
+
+// Open the shell script in vi editor
+[2021ict114@fedora ~]$ vi pr.sh
+// Give full read, write, and execute permission to the script
+[2021ict114@fedora ~]$ chmod 777 pr.sh
+// Run the shell script
+[2021ict114@fedora ~]$ ./pr.sh
+// User input for date
+Date:
+28
+// Output of the calculation
+Calculation for life path number:
+Lucky

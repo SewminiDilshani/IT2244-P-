@@ -1,0 +1,34 @@
+Q7]
+Print pattern.
+
+    *
+   * *
+  * * *
+ * * * *
+* * * * *
+----------------------------------------------------------------------------------------------------------------
+
+Answer-:
+
+// Set the number of rows for the pyramid
+rows=5
+
+// Outer loop: handles the number of rows (1 to 5)
+for ((i=1; i<=rows; i++))
+do
+
+  // Inner loop 1: prints spaces before stars
+  for ((j=i; j<rows; j++))
+  do
+    echo -n " "  // Print space for alignment
+  done
+
+  // Inner loop 2: prints stars with trailing space
+  for ((k=1; k<=i; k++))
+  do
+    echo -n "* "  // Print star followed by a space
+  done
+
+  // Move to the next line after each row
+  echo
+done
