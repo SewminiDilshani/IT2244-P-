@@ -1,0 +1,61 @@
+3]
+Multiples of 3 between 1 and 50:
+3
+6
+9
+12
+15
+18
+21
+24
+27
+30
+33
+36
+39
+42
+45
+48
+----------------------------------------------------------------------------------------------------------------
+
+Answer-:
+
+// Print the heading
+echo "Multiples of 3 between 1 and 50: "
+
+// Initialize i with 3
+let i=3
+
+// Start the while loop: run while i is less than or equal to 50
+while [ $i -le 50 ]
+do
+    // Print the current value of i
+    echo $i
+
+    // Increment i by 3
+    i=$(($i + 3))
+done
+
+
+Linux Commands-:
+
+[2021ict114@fedora ~]$ vi Q3.sh
+[2021ict114@fedora ~]$ chmod 777 Q3.sh
+[2021ict114@fedora ~]$ ./Q3.sh
+Multiples of 3 between 1 and 50:
+3
+6
+9
+12
+15
+18
+21
+24
+27
+30
+33
+36
+39
+42
+45
+48

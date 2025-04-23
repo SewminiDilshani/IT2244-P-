@@ -1,0 +1,58 @@
+2]
+Factorial
+Output: Factorial of 5 is: 120
+----------------------------------------------------------------------------------------------------------------
+
+#Type 1:
+Answer-:
+
+// Initialize fact to 1
+fact=1
+
+// Loop from i=1 to i<=5
+for((i=1; i<=5; i++))
+do
+    // Multiply current fact with i and store it back in fact
+    fact=$(($fact * $i))
+done
+
+// Output the result
+echo "Factorial of 5 is: "$fact
+
+Linux Commands-:
+
+[2021ict114@fedora ~]$ vi Q2.sh
+[2021ict114@fedora ~]$ chmod 777 Q2.sh
+[2021ict114@fedora ~]$ ./Q2.sh
+Factorial of 5 is: 120
+
+#Type 2:
+Answer-:
+
+// Prompt the user to enter a number
+echo "Enter a number: "
+
+// Read the number entered by the user
+read num
+
+// Initialize fact to 1
+fact=1
+
+// Loop from i=1 up to i=num
+for((i=1; i<=num; i++))
+do
+    // Multiply fact by the current value of i
+    fact=$(($fact * $i))
+done
+
+// Print the factorial result
+echo "Factorial of $num is: $fact"
+
+Linux Commands-:
+
+[2021ict114@fedora ~]$ vi Q2.sh
+[2021ict114@fedora ~]$ chmod 777 Q2.sh
+[2021ict114@fedora ~]$ ./Q2.sh
+Enter a number:
+5
+Factorial of 5 is: 120

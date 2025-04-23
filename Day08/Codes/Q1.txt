@@ -1,0 +1,69 @@
+1]
+Fibonacci series
+Output: First 10 Fibonacci numbers:
+0 1 1 2 3 5 8 13 21 34
+----------------------------------------------------------------------------------------------------------------
+
+Answer-:
+
+// Declare a variable 'num'
+let num
+
+// Prompt the user to enter a number
+echo "Enter the number: "
+
+// Read input into 'num'
+read num
+
+// Print a blank line
+echo " "
+
+// Initialize variables for Fibonacci sequence
+a=0
+b=1
+
+// Loop from i=0 to i<num
+for((i=0; i<num; i++))
+do
+    // Print the current value of 'a'
+    echo $a
+
+    // Print a blank line
+    echo " "
+
+    // Calculate the next Fibonacci number
+    c=$(($a + $b))
+
+    // Update 'a' and 'b' for the next iteration
+    a=$b
+    b=$c
+done
+
+
+Linux Commands-:
+
+[2021ict114@fedora ~]$ vi Q1.sh
+[2021ict114@fedora ~]$ chmod 777 Q1.sh
+[2021ict114@fedora ~]$ ./Q1.sh
+Enter the number:
+10
+
+0
+
+1
+
+1
+
+2
+
+3
+
+5
+
+8
+
+13
+
+21
+
+34
