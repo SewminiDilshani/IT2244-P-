@@ -1,0 +1,26 @@
+1 Type-:
+// Printing multiplication table of 2 using a for loop
+echo "Multiplication table:"
+num=2
+for((i=1; i<=12; i++))
+do
+  // Multiply current number with 2
+  mul=$(($i * $num))
+  // Print the result
+  echo "$i x $num = $mul"
+done
+
+2 Type-:
+// Loop from 1 to 15
+for ((i=1; i<=15; i++))
+do
+  // Loop for j from 2 to 2 (only once)
+  for ((j=2; j<=2; j++))
+  do
+    // Print multiplication result
+    echo -n "$i x $j = $(($i * $j))"
+  done
+  
+  // Move to next line after printing
+  echo ''
+done

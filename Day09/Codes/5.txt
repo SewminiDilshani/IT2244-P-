@@ -1,0 +1,28 @@
+// Program to find and sum all prime numbers between 1 and 100
+
+sum=0  // Initialize sum to 0
+
+// Loop through numbers from 2 to 100
+for((i=2; i<=100; i++))
+do
+  prime=1  // Assume number is prime
+
+  // Check if number is divisible by any number other than 1 and itself
+  for((j=2; j<=i/2; j++))
+  do
+    if [ $((i % j)) -eq 0 ]
+    then
+      prime=0  // Not a prime number
+      break
+    fi
+  done
+
+  // If number is prime, add to sum
+  if [ $prime -eq 1 ]
+  then
+    sum=$(($sum + $i))
+  fi
+done
+
+// Display the total sum of prime numbers
+echo "Sum of prime numbers between 1 and 100 is: $sum"

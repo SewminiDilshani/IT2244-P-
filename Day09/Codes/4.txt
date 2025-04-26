@@ -1,0 +1,30 @@
+// Program to print Fibonacci series and calculate the sum
+
+// Read the number of terms from the user
+echo "Enter the number: "
+read num
+echo
+
+// Initialize first two numbers
+a=0
+b=1
+sum=0
+
+echo "Fibonacci Series:"
+
+for((i=0; i<num; i++))
+do
+  // Print the current number
+  echo -n "$a "
+  // Add the current number to sum
+  sum=$(($sum + $a))
+  // Generate next number
+  c=$(($a + $b))
+  a=$b
+  b=$c
+done
+
+// Print a newline
+echo
+// Display the sum of Fibonacci numbers
+echo "Sum of the first $num Fibonacci numbers is: $sum"

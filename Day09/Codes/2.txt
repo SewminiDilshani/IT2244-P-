@@ -1,0 +1,37 @@
+// Program to print a diamond pattern
+
+rows=5  // Total number of rows for the upper half
+
+// Top half of the diamond
+for((i=1; i<=rows; i++))
+do
+  // Print spaces before stars
+  for((j=i; j<rows; j++))
+  do
+    echo -n " "
+  done
+  // Print stars
+  for((k=1; k<=((2*i-1)); k++))
+  do
+    echo -n "*"
+  done
+  // Move to the next line
+  echo
+done
+
+// Bottom half of the diamond
+for((i=rows-1; i>=1; i--))
+do
+  // Print spaces before stars
+  for((j=rows; j>i; j--))
+  do
+    echo -n " "
+  done
+  // Print stars
+  for((k=1; k<=((2*i-1)); k++))
+  do
+    echo -n "*"
+  done
+  // Move to the next line
+  echo
+done
