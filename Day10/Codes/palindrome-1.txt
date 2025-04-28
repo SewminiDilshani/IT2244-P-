@@ -1,0 +1,13 @@
+// Prompt for input string
+echo "Enter a string to check if it's a palindrome: "
+read str
+
+// Reverse the string using rev
+rev_str=$(echo "$str" | rev)
+
+// Check if the original string is equal to the reversed string
+if [ "$str" == "$rev_str" ]; then
+    echo "The string '$str' is a palindrome."
+else
+    echo "The string '$str' is NOT a palindrome."
+fi

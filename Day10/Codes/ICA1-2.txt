@@ -1,0 +1,39 @@
+// Read three numbers
+echo "Enter the first number: "
+read a
+echo "Enter the second number: "
+read b
+echo "Enter the third number: "
+read c
+
+x=$a
+y=$b
+
+// Calculate GCD of a and b using Euclidean algorithm
+for (( ; b != 0; ))
+do
+    temp=$b
+    b=$((a % b))
+    a=$temp
+done
+gcd_ab=$a
+
+// Calculate LCM of a and b
+lcm_ab=$(( (x * y) / gcd_ab ))
+
+b=$y
+d=$c
+
+// Calculate GCD of b and c using Euclidean algorithm
+for (( ; d != 0; ))
+do
+    temp=$d
+    d=$((b % d))
+    b=$temp
+done
+gcd_bc=$b
+
+echo "---------------------------------"
+echo "LCM of $x and $y is: $lcm_ab"
+echo "GCD of $y and $c is: $gcd_bc"
+echo "---------------------------------"
