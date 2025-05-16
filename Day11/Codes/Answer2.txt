@@ -1,0 +1,8 @@
+✅ Question 02 – Bash Shell Commands (save as answer2.sh)
+Assuming data.csv is in the same directory and has a header (e.g., Name,GPA):
+# Filter GPA > 3.5
+awk -F, 'NR>1 && $4 > 3.5' data.csv
+
+# Calculate average GPA
+awk -F, 'NR>1 {sum+=$4; count++}
+{if (count > 0) print "Average GPA:", sum/count}' data.csv

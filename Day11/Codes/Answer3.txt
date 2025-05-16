@@ -1,0 +1,19 @@
+✅ Question 03 – Bash Shell Script (save as answer3.sh)
+# Read two strings
+echo "Enter the String 1: "
+read str1
+echo "Enter the String 2: "
+read str2
+
+# Get lengths
+len1=${#str1}
+len2=${#str2}
+
+# Compare and print
+if [ $len1 -gt $len2 ];then
+ echo "$str1 is larger than str2"
+elif [ $len2 -gt $len1 ];then
+ echo "$str2 is larger than str1"
+else
+ echo "Both strings are of equal length"
+fi
